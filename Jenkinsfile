@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VENV_DIR   = 'venv'
-        DEPLOY_DIR = 'C:\\Dev\\SAU\\class\\632218\\ws\\jenkins1\\deploy'
+        DEPLOY_DIR = 'C:\\Dev\\SAU\\class\\632218\\ws\\jenkins2\\deploy'
     }
 
     options {
@@ -54,9 +54,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat 'if not exist "%DEPLOY_DIR%" mkdir "%DEPLOY_DIR%"'
-                bat 'copy /Y helloworld.py "%DEPLOY_DIR%\\"'
+                bat 'copy /Y calculator.py "%DEPLOY_DIR%\\"'
                 bat 'copy /Y profile.py "%DEPLOY_DIR%\\"'
-                bat 'python "%DEPLOY_DIR%\\helloworld.py"'
+                bat 'python "%DEPLOY_DIR%\\calculator.py"'
             }
         }
     }
